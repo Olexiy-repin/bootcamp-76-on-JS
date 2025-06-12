@@ -60,12 +60,12 @@
 
 // TODO: Дізнайтесь довжину рядка message.
 
-const message = 'This string is 28 chars long';
+// const message = 'This string is 28 chars long';
 
-const messageLength = message.length;
+// const messageLength = message.length;
 
-console.log('message:', message);
-console.log('messageLength:', messageLength);
+// console.log('message:', message);
+// console.log('messageLength:', messageLength);
 
 /*
  TODO: Склади фразу за допомогою шаблонних рядків
