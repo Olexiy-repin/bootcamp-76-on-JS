@@ -1,3 +1,12 @@
+// const refs = {
+//   mainTitle: document.querySelector('.js-title'),
+// };
+
+// console.log(refs);
+
+// refs.mainTitle.textContent = '<span>Main</span> Gallery';
+// refs.mainTitle.innerHTML = '<span>Main</span> Gallery';
+
 const pictures = [
   {
     width: 700,
@@ -31,15 +40,6 @@ const pictures = [
   },
 ];
 
-// const refs = {
-//   mainTitle: document.querySelector('.js-title'),
-// };
-
-// console.log(refs);
-
-// refs.mainTitle.textContent = '<span>Main</span> gallery';
-// refs.mainTitle.innerHTML = '<span>Main</span> gallery';
-
 /*
 <li class="gallery-item">
   <a href="#">
@@ -49,8 +49,25 @@ const pictures = [
 */
 
 //~ Функція для створення карточки createGalleryCard(cardInfo)
-const createGalleryCard = pictureInfo => {};
+const createGalleryCard = pictureInfo => {
+  return `
+  <li class="gallery-item">
+    <a href="#">
+      <img src="${pictureInfo.url}" alt="${pictureInfo.alt}" width="${pictureInfo.width}" height="${pictureInfo.height}">
+    </a>
+  </li>
+  `;
+};
 
 //~ Створення масиву рядків із елементами
+const galleryCardsTemplate = pictures.map(picInfo => createGalleryCard(picInfo)).join('');
+
+console.log(galleryCardsTemplate);
 
 //~ Вставка елементів на сторінку
+const refs = {
+  galleryList: document.querySelector('.js-gallery'),
+};
+
+// refs.galleryList.innerHTML = galleryCardsTemplate;
+refs.galleryList.insertAdjacentHTML('afterbegin', galleryCardsTemplate);
