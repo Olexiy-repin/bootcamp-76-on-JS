@@ -9,16 +9,40 @@ TODO:   - withdraw(amount) - віднімає amount від #balance, якщо a
 TODO: - гетером balance, який повертає значення балансу.
 */
 
-// const account = new BankAccount(1000);
+class BankAccount {
+  #balance;
 
-// console.log(account);
+  constructor(balance) {
+    this.#balance = balance;
+  }
 
-// console.log(account.balance);
+  get balance() {
+    return this.#balance;
+  }
 
-// account.deposit(200);
+  deposit(amount) {
+    if (amount > 0) {
+      this.#balance += amount;
+    }
+  }
 
-// console.log(account.balance);
+  withdraw(amount) {
+    if (amount <= this.#balance && amount > 0) {
+      this.#balance -= amount;
+    }
+  }
+}
 
-// account.withdraw(500);
+const account = new BankAccount(1000);
 
-// console.log(account.balance);
+console.log('account:', account);
+
+console.log(account.balance);
+
+account.deposit(200);
+
+console.log(account.balance);
+
+account.withdraw(300);
+
+console.log(account.balance);
