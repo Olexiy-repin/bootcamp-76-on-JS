@@ -1,0 +1,41 @@
+const refs = {
+  backdrop: document.querySelector('.js-backdrop'),
+  modalOpenBtn: document.querySelector('.js-modal-open'),
+  modalCloseBtn: document.querySelector('.js-modal-close'),
+};
+
+console.log(refs);
+
+const closeModal = () => {
+  refs.backdrop.classList.remove('is-open');
+
+  refs.modalCloseBtn.removeEventListener('click', onModalCloseBtnClick);
+  refs.backdrop.removeEventListener('click', onBackdropClick);
+  document.removeEventListener('keydown', onEscapeKeyPress);
+};
+
+const onModalOpenBtnClick = event => {
+  refs.backdrop.classList.add('is-open');
+
+  refs.modalCloseBtn.addEventListener('click', onModalCloseBtnClick);
+  refs.backdrop.addEventListener('click', onBackdropClick);
+  document.addEventListener('keydown', onEscapeKeyPress);
+};
+
+const onModalCloseBtnClick = event => {
+  closeModal();
+};
+
+const onBackdropClick = event => {
+  if (event.target === event.currentTarget) {
+    closeModal();
+  }
+};
+
+const onEscapeKeyPress = event => {
+  if (event.code === 'Escape') {
+    closeModal();
+  }
+};
+
+refs.modalOpenBtn.addEventListener('click', onModalOpenBtnClick);
