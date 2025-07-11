@@ -1,0 +1,30 @@
+{
+  "name": "bootcamp-76-on-js",
+  "version": "1.0.0",
+  "description": "1. Розберемо:",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/js/index.js -d dist/js/",
+    "css-minify": "npx postcss src/css/styles.css > src/css/styles.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olexiy-repin/bootcamp-76-on-JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olexiy-repin/bootcamp-76-on-JS/issues"
+  },
+  "homepage": "https://github.com/Olexiy-repin/bootcamp-76-on-JS#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1"
+  },
+  "browserslist": "> 0.1%"
+}
