@@ -1,5 +1,5 @@
 const timer = {
-  deadline: new Date('2025-07-14T12:54:00'),
+  deadline: new Date('2025-07-15T00:00:00'),
   intervalId: null,
   refs: {
     days: document.querySelector('.js-timer-days'),
